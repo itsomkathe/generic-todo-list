@@ -11,15 +11,14 @@ function App(){
   }
 
   function updateItems(event){
-    setItems((prev)=>{
-      return[...prev, task];
-    });
-  
+    if(task.length>0){
+      setItems((prev)=>{
+        return[...prev, task];
+      });
+    }
   }
 
   function removeItem(index){
-    console.log("removing "+ items[index])
-    console.log(items);
     setItems((prev)=>{
       const newItems = [...prev];
       newItems.splice(index, 1);
